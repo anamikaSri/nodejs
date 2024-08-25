@@ -21,4 +21,4 @@ app.get("/about", (req, res) => {
 
 // so this is internally using http module only --> for 
 // creating a server and making it listen to port 8000
-app.listen(8000 , ()=>{console.log("listening")})
+app.listen(8080 , ()=>{console.log("listening")})
