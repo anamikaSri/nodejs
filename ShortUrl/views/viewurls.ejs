@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Urls</title>
+</head>
+
+<body>
+    <h1>All Urls</h1>
+    <form action="/url" method="POST">
+        <input type="text" name="url">
+        <button type="submit">Submit</button>
+    </form>
+    <% if (locals.shortId) { %>
+        <p>URL generated : <a>http://localhost:8081/url/<%= shortId %></a>
+        </p>
+        <% } %>
+            <table>
+                <tr>
+                    <th>shortId</th>
+                    <th>originalUrl</th>
+                    <th>count</th>
+                </tr>
+                <% urls.forEach(url=> { %>
+                    <tr>
+                        <td>
+                            <%= url.shortUrl %>
+                        </td>
+                        <td>
+                            <%= url.originalUrl %>
+                        </td>
+                        <td>
+                            <%= url.visitHistory.length %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
+</body>
+
+</html>
